@@ -14,6 +14,7 @@ public class Frame implements ActionListener {
     private JMenuItem saveAsFile;
     private JMenuItem turnStringLow;
     private JMenuItem turnStringUp;
+    private JTextArea area;
 
 
     public Frame() {
@@ -24,6 +25,7 @@ public class Frame implements ActionListener {
         saveAsFile = new JMenuItem("Save As");
         turnStringLow = new JMenuItem("turn string low");
         turnStringUp = new JMenuItem("TURN STRING UPPER");
+        area = new JTextArea("",30,50);
     }
 
 
@@ -63,7 +65,6 @@ public class Frame implements ActionListener {
         editMenu.add(turnStringUp);
 
         //This is text area in a common notepad
-        JTextArea area = new JTextArea("",30,50);
         area.setLineWrap(true);
         area.setWrapStyleWord(true);
 
@@ -87,16 +88,19 @@ public class Frame implements ActionListener {
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == newFile){
             System.out.println("newFile was pressed");
+
         }
         else if(e.getSource() == openFile){
             System.out.println("openFile was pressed");
         }
         else if(e.getSource() == closeFile){
             System.out.println("closeFile was pressed");
+            CloseFile close = new CloseFile(area);
+            close.close();
         }
         else if(e.getSource() == saveFile){
             System.out.println("saveFile was pressed");
-            saveFrame save = new saveFrame();
+            SaveFrame save = new SaveFrame(area);
             save.showSFrame();
         }
         else if(e.getSource() == saveAsFile){
