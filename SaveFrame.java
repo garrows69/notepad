@@ -1,22 +1,14 @@
 package com.max.JFRAME.src;
 
+import javax.smartcardio.Card;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 
-public class SaveFrame implements ActionListener {
+public class saveFrame implements ActionListener {
 
     private JFrame frame;
-    private JTextArea Jtext;
-
-    public SaveFrame(JTextArea t){
-        Jtext = t;
-    }
 
    public void showSFrame(){
        //creates JFrame
@@ -31,23 +23,8 @@ public class SaveFrame implements ActionListener {
        button.addActionListener(this);
 
        //label
-       JLabel text = new JLabel("The file was saved/It was saved in home directory. Ex: C:\\Users\\Yourname");
+       JLabel text = new JLabel("The file was saved");
        text.setPreferredSize(new Dimension(200,200));
-
-       //Saves file to User Home Directory
-       String userHome = System.getProperty("user.home");
-       File textFile = new File(userHome, "myText.txt");
-       try {
-           BufferedWriter out = new BufferedWriter(new FileWriter(textFile));
-           try{
-               out.write(Jtext.getText());
-           } finally {
-               out.close();
-           }
-       } catch (IOException e) {
-           e.printStackTrace();
-       }
-
 
        //adds content to JFrame
        frame.getContentPane().add(text, BorderLayout.NORTH);
