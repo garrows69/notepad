@@ -1,7 +1,6 @@
 package com.max.JFRAME.src;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,9 +25,6 @@ public class CloseFile implements ActionListener {
 
         //button properties
         button.addActionListener(this);
-
-        //label properties
-
 
         //adds the button and label to JFrame
         frame.getContentPane().add(label, BorderLayout.CENTER);

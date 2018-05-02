@@ -92,6 +92,8 @@ public class Frame implements ActionListener {
         }
         else if(e.getSource() == openFile){
             System.out.println("openFile was pressed");
+            OpenFile open = new OpenFile(area);
+            open.readText();
         }
         else if(e.getSource() == closeFile){
             System.out.println("closeFile was pressed");
