@@ -1,6 +1,6 @@
 # notepad program
 
-What this does:
+What does this do?
 
 This is my java version of the notepad app on windows. STILL IN DEV
 
