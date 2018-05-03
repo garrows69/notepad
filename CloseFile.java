@@ -12,6 +12,15 @@ public class CloseFile implements ActionListener {
     private JLabel label;
     private JFrame frame;
 
+    public CloseFile(JTextArea j ,String jLabel){
+        JText = j;
+        label = new JLabel(jLabel);
+        button = new JButton("Text File was created");
+        frame = new JFrame();
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(300,300));
+    }
+
     public CloseFile(JTextArea t){
         JText = t;
         button = new JButton("OK");

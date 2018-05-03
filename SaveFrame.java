@@ -31,7 +31,7 @@ public class SaveFrame implements ActionListener {
        button.addActionListener(this);
 
        //label
-       JLabel text = new JLabel("The file was saved/It was saved in home directory. Ex: C:\\Users\\Yourname");
+       JLabel text = new JLabel("The file was saved/It was saved where the project is located.");
        text.setPreferredSize(new Dimension(200,200));
 
        //Saves file to User Home Directory

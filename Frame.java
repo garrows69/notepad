@@ -88,6 +88,8 @@ public class Frame implements ActionListener {
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == newFile){
             System.out.println("newFile was pressed");
+            NewFile newF = new NewFile(area);
+            newF.close();
 
         }
         else if(e.getSource() == openFile){
@@ -109,7 +111,10 @@ public class Frame implements ActionListener {
             System.out.println("saveAsFile was pressed");
         }
         else if(e.getSource() == turnStringLow){
+            String text = area.getText();
             System.out.println("turnStringLow was pressed");
+            TurnStringLow low = new TurnStringLow(area);
+            low.turnLow(text);
         }
         else if(e.getSource() == turnStringUp){
             System.out.println("turnStringUp was pressed");
