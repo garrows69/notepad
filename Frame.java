@@ -16,7 +16,6 @@ public class Frame implements ActionListener {
     private JMenuItem turnStringUp;
     private JTextArea area;
 
-
     public Frame() {
         newFile = new JMenuItem("New");
         openFile = new JMenuItem("Open") ;
@@ -109,15 +108,21 @@ public class Frame implements ActionListener {
         }
         else if(e.getSource() == saveAsFile){
             System.out.println("saveAsFile was pressed");
+            SaveAsFile saveA = new SaveAsFile(area);
+            saveA.showFrame();
         }
         else if(e.getSource() == turnStringLow){
-            String text = area.getText();
+
             System.out.println("turnStringLow was pressed");
+            String text = area.getText();
             TurnStringLow low = new TurnStringLow(area);
-            low.turnLow(text);
+            low.turnCase(text);
         }
         else if(e.getSource() == turnStringUp){
             System.out.println("turnStringUp was pressed");
+            String text = area.getText();
+            TurnStringUp up = new TurnStringUp(area);
+            up.turnCase(text);
         }
 
     }

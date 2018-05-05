@@ -16,15 +16,12 @@ public class SaveFrame implements ActionListener {
 
     public SaveFrame(JTextArea t){
         Jtext = t;
+        frame = new JFrame();
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(300,300));
     }
 
    public void showSFrame(){
-       //creates JFrame
-       frame = new JFrame();
-       frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-       frame.setPreferredSize(new Dimension(300,300));
-       frame.setResizable(false);
-
        //button
        JButton button = new JButton("OK");
        button.setPreferredSize(new Dimension(100,100));
