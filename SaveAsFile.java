@@ -52,5 +52,7 @@ public class SaveAsFile implements ActionListener {
         } catch (IOException r) {
             r.printStackTrace();
         }
+        frame.setVisible(false);
+        frame.dispose();
     }
 }

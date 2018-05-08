@@ -88,10 +88,11 @@ public class Frame implements ActionListener {
         if(e.getSource() == newFile){
             System.out.println("newFile was pressed");
             NewFile newF = new NewFile(area);
-            newF.close();
+            newF.showFrame();
 
         }
         else if(e.getSource() == openFile){
+            //implement the search for openFile
             System.out.println("openFile was pressed");
             OpenFile open = new OpenFile(area);
             open.readText();

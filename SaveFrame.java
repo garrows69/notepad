@@ -9,21 +9,22 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class SaveFrame implements ActionListener {
+public class SaveFrame implements ActionListener{
 
     private JFrame frame;
     private JTextArea Jtext;
+    private JButton button;
 
     public SaveFrame(JTextArea t){
         Jtext = t;
         frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(300,300));
+        button = new JButton("Ok");
     }
 
    public void showSFrame(){
        //button
-       JButton button = new JButton("OK");
        button.setPreferredSize(new Dimension(100,100));
        button.addActionListener(this);
 
@@ -32,7 +33,7 @@ public class SaveFrame implements ActionListener {
        text.setPreferredSize(new Dimension(200,200));
 
        //Saves file to User Home Directory
-       File textFile = new File("myText.txt");
+       File textFile = new File("NewFile.txt");
        try {
            BufferedWriter out = new BufferedWriter(new FileWriter(textFile));
            try{
